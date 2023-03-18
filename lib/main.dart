@@ -4,8 +4,11 @@ import 'package:ecommerce/core/services/services.dart';
 import 'package:ecommerce/view/screen/language.dart';
 import 'package:ecommerce/view/screen/onboarding.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
+import 'core/localization/changelocal.dart';
 import 'routes.dart';
 
 void main() async {
@@ -21,9 +24,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    LocaleController controller = Get.put(LocaleController());
     return GetMaterialApp(
       translations: MyTranslation(),
       debugShowCheckedModeBanner: false,
+      locale: controller.language,
       theme: ThemeData(
         fontFamily: 'PlayfairDisplay',
         textTheme: const TextTheme(
