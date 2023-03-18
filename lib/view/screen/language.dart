@@ -17,11 +17,11 @@ class Language extends GetView<LocaleController> {
             children: [
               Text('1'.tr, style:Theme.of(context).textTheme.headlineLarge),
               const SizedBox(height: 20,),
-              CustomButtonLang(textButton: 'Ar',onPressed: (){
+              CustomButtonLang(textButton: 'Arabic',onPressed: (){
                 controller.changeLang('ar');
                 Get.toNamed(AppRoute.onBoarding);
               }),
-              CustomButtonLang(textButton: 'En',onPressed: (){
+              CustomButtonLang(textButton: 'English',onPressed: (){
                 controller.changeLang('en');
                 Get.toNamed(AppRoute.onBoarding);
               }),
