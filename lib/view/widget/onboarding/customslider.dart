@@ -18,10 +18,7 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
       itemCount: onBoardingList.length,
       itemBuilder: (context, i) => Column(
         children: [
-          Text(onBoardingList[i].title!, style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),),
+          Text(onBoardingList[i].title!, style: Theme.of(context).textTheme.headline1),
           const SizedBox(
             height: 50,
           ),
@@ -36,11 +33,7 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
             width: double.infinity,
             alignment: Alignment.center,
             child: Text(onBoardingList[i].body!, textAlign: TextAlign.center,
-              style: const TextStyle(
-                height: 2,
-                color: AppColor.grey,
-                fontWeight: FontWeight.w300,
-              ),),
+              style: Theme.of(context).textTheme.bodyText1),
           ),
         ],
       ),);
