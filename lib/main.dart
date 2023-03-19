@@ -30,7 +30,12 @@ class MyApp extends StatelessWidget {
         textTheme: const TextTheme(
           headlineLarge: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 20,
+            fontSize: 25,
+            color: AppColor.black,
+          ),
+          headlineMedium: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 26,
             color: AppColor.black,
           ),
           bodyLarge: TextStyle(
@@ -38,6 +43,11 @@ class MyApp extends StatelessWidget {
             fontSize: 17,
             color: AppColor.grey,
             fontWeight: FontWeight.w300,
+          ),
+          bodyMedium: TextStyle(
+            height: 2,
+            fontSize: 13,
+            color: AppColor.grey,
           ),
         ),
         primarySwatch: Colors.blue,
