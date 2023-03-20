@@ -19,7 +19,7 @@ class MyTranslation extends Translations{
         '2' : 'Welcome Back',
         '3' : 'Sign In With Your Email And Password Or Continue With A Social Media',
         '4' : 'Sign In',
-        '5 ' : 'enter your email',
+        '5' : 'enter your email',
         '6' : 'enter your password',
         '7' : 'Forget Password',
         '8' : 'Don\'t Have an Account ? ',
