@@ -1,25 +1,25 @@
+import 'package:ecommerce/controller/auth/signup_controller.dart';
 import 'package:ecommerce/core/constant/color.dart';
+import 'package:ecommerce/view/widget/auth/textsignup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../controller/auth/login_controller.dart';
 import '../../widget/auth/custombuttonauth.dart';
 import '../../widget/auth/customtextformauth.dart';
-import '../../widget/auth/logoauth.dart';
-import '../../widget/auth/textsignup.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class SignUp extends StatelessWidget {
+  const SignUp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    LoginControllerImp controller = Get.put(LoginControllerImp());
+    SignUpControllerImp controller = Get.put(SignUpControllerImp());
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: AppColor.backgroundColor,
         elevation: 0.0,
         title: Text(
-          '4'.tr,
+          '9'.tr,
           style: Theme.of(context)
               .textTheme
               .headlineLarge!
@@ -30,25 +30,23 @@ class Login extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 15),
         child: ListView(
           children: [
-            const LogoAuth(),
-            Text(
-              '2'.tr,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 25),
               child: Text(
-                '3'.tr,
+                '12'.tr,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
             const SizedBox(
               height: 15,
+            ),
+            CustomTextFormAuth(
+              myController: controller.username,
+              hintText: '10'.tr,
+              labelText: 'User Name',
+              iconData: Icons.person_2_outlined,
+              //myController: null,
             ),
             CustomTextFormAuth(
               myController: controller.email,
@@ -58,31 +56,37 @@ class Login extends StatelessWidget {
               //myController: null,
             ),
             CustomTextFormAuth(
+              myController: controller.phone,
+              hintText: '11'.tr,
+              labelText: 'Phone',
+              iconData: Icons.phone_android_outlined,
+              //myController: null,
+            ),
+            CustomTextFormAuth(
               myController: controller.password,
               hintText: '6'.tr,
               labelText: 'Password',
               iconData: Icons.lock_outline,
               //myController: null,
             ),
-            Text(
-              '7'.tr,
-              textAlign: TextAlign.end,
+            const SizedBox(
+              height: 15,
             ),
             CustomButtonAuth(
-              text: 'Login',
+              text: 'Register',
               onPressed: () {},
             ),
             const SizedBox(
               height: 20,
             ),
-
             CustomTextSignUpOrSignIn(
-              textOne: 'Don\'t have an Account ? ',
-              textTwo: 'SignUp',
-              onTap: (){
-                controller.goToSignUp();
-              },
+                textOne: '13'.tr,
+                textTwo: '4'.tr,
+                onTap: (){
+                  controller.goToSignIn();
+                },
             ),
+
           ],
         ),
       ),
