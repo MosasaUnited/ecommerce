@@ -64,9 +64,14 @@ class Login extends StatelessWidget {
               iconData: Icons.lock_outline,
               //myController: null,
             ),
-            Text(
-              '7'.tr,
-              textAlign: TextAlign.end,
+            InkWell(
+              onTap: (){
+                controller.goToForgetPassword();
+              },
+              child: Text(
+                '7'.tr,
+                textAlign: TextAlign.end,
+              ),
             ),
             CustomButtonAuth(
               text: 'Login',
@@ -77,8 +82,8 @@ class Login extends StatelessWidget {
             ),
 
             CustomTextSignUpOrSignIn(
-              textOne: 'Don\'t have an Account ? ',
-              textTwo: 'SignUp',
+              textOne: '8'.tr,
+              textTwo: '9'.tr,
               onTap: (){
                 controller.goToSignUp();
               },
