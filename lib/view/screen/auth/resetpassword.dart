@@ -4,15 +4,18 @@ import 'package:ecommerce/view/widget/auth/textsignup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controller/auth/forgetpassword_controller.dart';
+import '../../../controller/auth/resetpasswoed_controller.dart';
 import '../../widget/auth/custombuttonauth.dart';
+import '../../widget/auth/customtextbodyauth.dart';
 import '../../widget/auth/customtextformauth.dart';
+import '../../widget/auth/customtitleauth.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    //ForgetPasswordControllerImp controller = Get.put(ForgetPasswordControllerImp());
+    ResetPasswordControllerImp controller = Get.put(ResetPasswordControllerImp());
 
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +23,7 @@ class ResetPassword extends StatelessWidget {
         backgroundColor: AppColor.backgroundColor,
         elevation: 0.0,
         title: Text(
-          '7'.tr,
+          '14'.tr,
           style: Theme.of(context)
               .textTheme
               .headlineLarge!
@@ -34,18 +37,27 @@ class ResetPassword extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            // CustomTextFormAuth(
-            //   myController: controller.phone,
-            //   hintText: '11'.tr,
-            //   labelText: 'Phone',
-            //   iconData: Icons.phone_android_outlined,
-            //   //myController: null,
-            // ),
+            const CustomTitleAuth(text: 'New Password',),
             const SizedBox(
               height: 20,
             ),
+            const CustomTextBodyAuth(text: 'Please Enter new Password',),
+            CustomTextFormAuth(
+              myController: controller.password,
+              hintText: '6'.tr,
+              labelText: 'Password',
+              iconData: Icons.phone_android_outlined,
+              //myController: null,
+            ),
+            CustomTextFormAuth(
+              myController: controller.repassword,
+              hintText: '15'.tr,
+              labelText: 'Re-Enter Password',
+              iconData: Icons.lock_outline,
+              //myController: null,
+            ),
             CustomButtonAuth(
-              text: 'Check',
+              text: 'Save',
               onPressed: () {},
             ),
             const SizedBox(

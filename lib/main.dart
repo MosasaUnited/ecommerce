@@ -1,6 +1,7 @@
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/core/localization/translation.dart';
 import 'package:ecommerce/core/services/services.dart';
+import 'package:ecommerce/test.dart';
 import 'package:ecommerce/view/screen/language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -52,7 +53,9 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const Language(),
+      home:
+       const Language(),
+      // const Language(),
       routes: routes,
     );
   }

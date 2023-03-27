@@ -15,7 +15,10 @@ class MyTranslation extends Translations{
         '9' : 'سجل الأن',
         '10': 'أدخل اسم المستخدم الخاص بك',
         '11': 'أدخل رقن التليفون الخاص بك',
-        '12' : 'سجل الأن بالايميل بحساب السوشيال ميديا'
+        '12': 'سجل الأن بالايميل بحساب السوشيال ميديا',
+        '13':'هل لديك حساب ؟ ',
+        '14': 'إعداد كلمة سر جديدة',
+        '15': 'أعد إدخال كلمة السر الخاصة بك',
       },
       'en' : {
         '1' : 'Choose Language',
@@ -30,7 +33,9 @@ class MyTranslation extends Translations{
         '10': 'ُEnter your User Name',
         '11': 'ُEnter your Phone Number',
         '12': 'ُSignUp With Your Email Or With A Social Media Account',
-        '13' : 'Have an Account ? ',
+        '13': 'Have an Account ? ',
+        '14': 'Reset Password',
+        '15': 'Re-Enter Your Password',
       },
 
   };
