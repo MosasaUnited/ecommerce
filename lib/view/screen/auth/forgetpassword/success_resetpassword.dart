@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../core/constant/color.dart';
-import '../../widget/auth/custombuttonauth.dart';
+import '../../../../core/constant/color.dart';
+import '../../../widget/auth/custombuttonauth.dart';
 
-class SuccessSignUp extends StatelessWidget {
-  const SuccessSignUp({Key? key}) : super(key: key);
+class SuccessResetPassword extends StatelessWidget {
+  const SuccessResetPassword({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,23 +26,23 @@ class SuccessSignUp extends StatelessWidget {
         child: Column(
           children: [
             const Center(
-              child: Icon(
-                Icons.check_circle_outline,
-                size: 200.0,
-                color: AppColor.primaryColor,
-              )),
-              Text('17'.tr),
-              const Spacer(),
-              Container(
-                width: double.infinity,
-                child: CustomButtonAuth(
+                child: Icon(
+                  Icons.check_circle_outline,
+                  size: 200.0,
+                  color: AppColor.primaryColor,
+                )),
+            Text('17'.tr),
+            const Spacer(),
+            Container(
+              width: double.infinity,
+              child: CustomButtonAuth(
                 text: 'Back To Login Screen',
                 onPressed: ()
                 {
                   // controller.signUp();
                 },
-                 ),
               ),
+            ),
             const SizedBox(
               height: 30,
             ),

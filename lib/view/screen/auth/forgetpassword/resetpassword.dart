@@ -3,12 +3,12 @@ import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/view/widget/auth/textsignup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../controller/auth/forgetpassword_controller.dart';
-import '../../../controller/auth/resetpasswoed_controller.dart';
-import '../../widget/auth/custombuttonauth.dart';
-import '../../widget/auth/customtextbodyauth.dart';
-import '../../widget/auth/customtextformauth.dart';
-import '../../widget/auth/customtitleauth.dart';
+import '../../../../controller/auth/forgetpassword_controller.dart';
+import '../../../../controller/auth/resetpasswoed_controller.dart';
+import '../../../widget/auth/custombuttonauth.dart';
+import '../../../widget/auth/customtextbodyauth.dart';
+import '../../../widget/auth/customtextformauth.dart';
+import '../../../widget/auth/customtitleauth.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({Key? key}) : super(key: key);
@@ -58,7 +58,10 @@ class ResetPassword extends StatelessWidget {
             ),
             CustomButtonAuth(
               text: 'Save',
-              onPressed: () {},
+              onPressed: ()
+              {
+                controller.goToSuccessResetPassword();
+              },
             ),
             const SizedBox(
               height: 20,

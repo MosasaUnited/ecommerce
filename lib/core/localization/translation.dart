@@ -14,11 +14,13 @@ class MyTranslation extends Translations{
         '8' : 'ليس لديك حساب أخر ؟ ',
         '9' : 'سجل الأن',
         '10': 'أدخل اسم المستخدم الخاص بك',
-        '11': 'أدخل رقن التليفون الخاص بك',
+        '11': 'أدخل رقم التليفون الخاص بك',
         '12': 'سجل الأن بالايميل بحساب السوشيال ميديا',
         '13':'هل لديك حساب ؟ ',
         '14': 'إعداد كلمة سر جديدة',
         '15': 'أعد إدخال كلمة السر الخاصة بك',
+        '16': 'انت على بعد خطوة واحدة لنجاح التسجيل',
+        '17': 'تم التسحيل بنجاح',
       },
       'en' : {
         '1' : 'Choose Language',
@@ -36,6 +38,8 @@ class MyTranslation extends Translations{
         '13': 'Have an Account ? ',
         '14': 'Reset Password',
         '15': 'Re-Enter Your Password',
+        '16': 'ٍSuccess SignUp',
+        '17': 'You Are Have Been Registered',
       },
 
   };

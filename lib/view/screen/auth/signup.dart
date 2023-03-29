@@ -74,7 +74,10 @@ class SignUp extends StatelessWidget {
             ),
             CustomButtonAuth(
               text: 'Register',
-              onPressed: () {},
+              onPressed: ()
+              {
+                controller.signUp();
+              },
             ),
             const SizedBox(
               height: 20,

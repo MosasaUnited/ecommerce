@@ -4,11 +4,11 @@ import 'package:ecommerce/view/widget/auth/textsignup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
-import '../../../controller/auth/forgetpassword_controller.dart';
-import '../../../controller/auth/verifycode_controller.dart';
-import '../../widget/auth/custombuttonauth.dart';
-import '../../widget/auth/customtextformauth.dart';
-import '../../widget/auth/customtitleauth.dart';
+import '../../../../controller/auth/forgetpassword_controller.dart';
+import '../../../../controller/auth/verifycode_controller.dart';
+import '../../../widget/auth/custombuttonauth.dart';
+import '../../../widget/auth/customtextformauth.dart';
+import '../../../widget/auth/customtitleauth.dart';
 
 class VerifyCode extends StatelessWidget {
   const VerifyCode({Key? key}) : super(key: key);

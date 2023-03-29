@@ -1,18 +1,17 @@
-import 'package:ecommerce/controller/auth/signup_controller.dart';
 import 'package:ecommerce/core/constant/color.dart';
-import 'package:ecommerce/view/widget/auth/textsignup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../controller/auth/forgetpassword_controller.dart';
+import '../../../controller/checkphone_controller.dart';
 import '../../widget/auth/custombuttonauth.dart';
 import '../../widget/auth/customtextformauth.dart';
 
-class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({Key? key}) : super(key: key);
+
+class CheckPhone extends StatelessWidget {
+  const CheckPhone({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ForgetPasswordControllerImp controller = Get.put(ForgetPasswordControllerImp());
+    CheckPhoneControllerImp controller = Get.put(CheckPhoneControllerImp());
 
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +19,7 @@ class ForgetPassword extends StatelessWidget {
         backgroundColor: AppColor.backgroundColor,
         elevation: 0.0,
         title: Text(
-          '7'.tr,
+          '11'.tr,
           style: Theme.of(context)
               .textTheme
               .headlineLarge!
@@ -36,7 +35,7 @@ class ForgetPassword extends StatelessWidget {
             ),
             CustomTextFormAuth(
               myController: controller.phone,
-              hintText: '11'.tr,
+              hintText: '16'.tr,
               labelText: 'Phone',
               iconData: Icons.phone_android_outlined,
               //myController: null,
@@ -48,7 +47,7 @@ class ForgetPassword extends StatelessWidget {
               text: 'Check',
               onPressed: ()
               {
-                controller.goToVerifyCode();
+                controller.goToSuccessSignUp();
               },
             ),
             const SizedBox(
