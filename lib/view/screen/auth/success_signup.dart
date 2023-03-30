@@ -1,3 +1,4 @@
+import 'package:ecommerce/controller/auth/success_signup_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/constant/color.dart';
@@ -8,6 +9,7 @@ class SuccessSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SuccessSignUpControllerImp controller = Get.put(SuccessSignUpControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -39,7 +41,7 @@ class SuccessSignUp extends StatelessWidget {
                 text: 'Back To Login Screen',
                 onPressed: ()
                 {
-                  // controller.signUp();
+                  controller.goToPageLogin();
                 },
                  ),
               ),

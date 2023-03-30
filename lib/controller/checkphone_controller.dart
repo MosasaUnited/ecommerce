@@ -4,7 +4,7 @@ import '../../core/constant/routes.dart';
 
 abstract class CheckPhoneController extends GetxController{
   checkPhone();
-  goToSuccessSignUp();
+  goToVerifyCode();
 }
 class CheckPhoneControllerImp extends CheckPhoneController {
 
@@ -15,8 +15,8 @@ class CheckPhoneControllerImp extends CheckPhoneController {
   checkPhone() {}
 
   @override
-  goToSuccessSignUp() {
-    Get.offNamed(AppRoute.successSignUp);
+  goToVerifyCode() {
+    Get.offNamed(AppRoute.verifyCodeSignUp);
   }
 
   @override

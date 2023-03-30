@@ -47,7 +47,7 @@ class CheckPhone extends StatelessWidget {
               text: 'Check',
               onPressed: ()
               {
-                controller.goToSuccessSignUp();
+                controller.goToVerifyCode();
               },
             ),
             const SizedBox(
