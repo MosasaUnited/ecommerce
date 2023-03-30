@@ -8,6 +8,8 @@ abstract class ForgetPasswordController extends GetxController{
 }
 class ForgetPasswordControllerImp extends ForgetPasswordController {
 
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
+
   late TextEditingController phone;
 
 
@@ -16,7 +18,14 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
 
   @override
   goToVerifyCode() {
-    Get.offNamed(AppRoute.verifyCode);
+    var formdata = formstate.currentState;
+    if(formdata!.validate()){
+      print('Valid');
+      Get.offNamed(AppRoute.verifyCode);
+    }else{
+      print('Not Valid');
+    }
+
   }
 
   @override

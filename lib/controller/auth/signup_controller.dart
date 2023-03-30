@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import '../../core/constant/routes.dart';
 
 abstract class SignUpController extends GetxController{
+
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
+
   signUp();
   goToSignIn();
 }
@@ -17,7 +20,12 @@ class SignUpControllerImp extends SignUpController {
   @override
   signUp()
   {
-    Get.offNamed(AppRoute.checkPhone);
+    var formdata = formstate.currentState;
+    if(formdata!.validate()){
+      print('Valid');
+      Get.offNamed(AppRoute.checkPhone);
+    }else{
+      print('Not Valid');}
   }
 
   @override

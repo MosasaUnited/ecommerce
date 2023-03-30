@@ -34,6 +34,7 @@ class CheckPhone extends StatelessWidget {
               height: 50,
             ),
             CustomTextFormAuth(
+              valid: (val){},
               myController: controller.phone,
               hintText: '16'.tr,
               labelText: 'Phone',
