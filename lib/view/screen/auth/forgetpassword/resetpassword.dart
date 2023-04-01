@@ -50,6 +50,7 @@ class ResetPassword extends StatelessWidget {
                 hintText: '6'.tr,
                 labelText: 'Password',
                 iconData: Icons.phone_android_outlined,
+                isNumber: false,
                 //myController: null,
               ),
               CustomTextFormAuth(
@@ -60,6 +61,7 @@ class ResetPassword extends StatelessWidget {
                 hintText: '15'.tr,
                 labelText: 'Re-Enter Password',
                 iconData: Icons.lock_outline,
+                isNumber: false,
                 //myController: null,
               ),
               CustomButtonAuth(

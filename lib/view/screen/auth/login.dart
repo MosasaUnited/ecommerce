@@ -61,6 +61,7 @@ class Login extends StatelessWidget {
                 hintText: '5'.tr,
                 labelText: 'Email',
                 iconData: Icons.email_outlined,
+                isNumber: false,
                 //myController: null,
               ),
               CustomTextFormAuth(
@@ -71,6 +72,7 @@ class Login extends StatelessWidget {
                 hintText: '6'.tr,
                 labelText: 'Password',
                 iconData: Icons.lock_outline,
+                isNumber: false,
                 //myController: null,
               ),
               InkWell(

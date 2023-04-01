@@ -45,6 +45,7 @@ class ForgetPassword extends StatelessWidget {
                 hintText: '11'.tr,
                 labelText: 'Phone',
                 iconData: Icons.phone_android_outlined,
+                isNumber: true,
                 //myController: null,
               ),
               const SizedBox(

@@ -1,4 +1,3 @@
-import 'package:ecommerce/view/screen/auth/checkphone.dart';
 import 'package:ecommerce/view/screen/auth/forgetpassword/forgetpassword.dart';
 import 'package:ecommerce/view/screen/auth/forgetpassword/resetpassword.dart';
 import 'package:ecommerce/view/screen/auth/signup.dart';
@@ -18,7 +17,6 @@ Map<String, Widget Function(BuildContext)> routes = {
   AppRoute.signUp : (context) => const SignUp(),
   AppRoute.forgetPassword : (context) => const ForgetPassword(),
   AppRoute.resetPassword : (context) => const ResetPassword(),
-  AppRoute.checkPhone : (context) => const CheckPhone(),
   AppRoute.verifyCode : (context) => const VerifyCode(),
   AppRoute.successResetPassword : (context) => const SuccessResetPassword(),
   AppRoute.successSignUp : (context) => const SuccessSignUp(),

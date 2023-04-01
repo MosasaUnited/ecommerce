@@ -12,7 +12,7 @@ class SignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SignUpControllerImp controller = Get.put(SignUpControllerImp());
+
 
     return Scaffold(
       appBar: AppBar(
@@ -27,85 +27,91 @@ class SignUp extends StatelessWidget {
               .copyWith(color: AppColor.grey),
         ),
       ),
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 15),
-        child: Form(
-          key: controller.formstate,
-          child: ListView(
-            children: [
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 25),
-                child: Text(
-                  '12'.tr,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyMedium,
+      body: GetBuilder<SignUpControllerImp>(
+        builder: (controller) => Container(
+          padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 15),
+          child: Form(
+            key: controller.formstate,
+            child: ListView(
+              children: [
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Text(
+                    '12'.tr,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              CustomTextFormAuth(
-                valid: (val){
-                  return validInput(val!, 5, 30, 'username');
-                },
-                myController: controller.username,
-                hintText: '10'.tr,
-                labelText: 'User Name',
-                iconData: Icons.person_2_outlined,
-                //myController: null,
-              ),
-              CustomTextFormAuth(
-                valid: (val){
-                  return validInput(val!, 5, 100, 'email');
-                },
-                myController: controller.email,
-                hintText: '5'.tr,
-                labelText: 'Email',
-                iconData: Icons.email_outlined,
-                //myController: null,
-              ),
-              CustomTextFormAuth(
-                valid: (val){
-                  return validInput(val!, 5, 15, 'phone');
-                },
-                myController: controller.phone,
-                hintText: '11'.tr,
-                labelText: 'Phone',
-                iconData: Icons.phone_android_outlined,
-                //myController: null,
-              ),
-              CustomTextFormAuth(
-                valid: (val){
-                  return validInput(val!, 5, 12, 'password');
-                },
-                myController: controller.password,
-                hintText: '6'.tr,
-                labelText: 'Password',
-                iconData: Icons.lock_outline,
-                //myController: null,
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              CustomButtonAuth(
-                text: 'Register',
-                onPressed: ()
-                {
-                  controller.signUp();
-                },
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              CustomTextSignUpOrSignIn(
+                const SizedBox(
+                  height: 15,
+                ),
+                CustomTextFormAuth(
+                  valid: (val){
+                    return validInput(val!, 5, 30, 'username');
+                  },
+                  myController: controller.username,
+                  hintText: '10'.tr,
+                  labelText: 'User Name',
+                  iconData: Icons.person_2_outlined,
+                  isNumber: false,
+                  //myController: null,
+                ),
+                CustomTextFormAuth(
+                  valid: (val){
+                    return validInput(val!, 5, 100, 'email');
+                  },
+                  myController: controller.email,
+                  hintText: '5'.tr,
+                  labelText: 'Email',
+                  iconData: Icons.email_outlined,
+                  isNumber: false,
+                  //myController: null,
+                ),
+                CustomTextFormAuth(
+                  valid: (val){
+                    return validInput(val!, 5, 15, 'phone');
+                  },
+                  myController: controller.phone,
+                  hintText: '11'.tr,
+                  labelText: 'Phone',
+                  iconData: Icons.phone_android_outlined,
+                  isNumber: true,
+                  //myController: null,
+                ),
+                CustomTextFormAuth(
+                  valid: (val){
+                    return validInput(val!, 5, 12, 'password');
+                  },
+                  myController: controller.password,
+                  hintText: '6'.tr,
+                  labelText: 'Password',
+                  iconData: Icons.lock_outline,
+                  isNumber: false,
+                  //myController: null,
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                CustomButtonAuth(
+                  text: 'Register',
+                  onPressed: ()
+                  {
+                    controller.signUp();
+                  },
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                CustomTextSignUpOrSignIn(
                   textOne: '13'.tr,
                   textTwo: '4'.tr,
                   onTap: (){
                     controller.goToSignIn();
                   },
-              ),
+                ),
 
-            ],
+              ],
+            ),
           ),
         ),
       ),
