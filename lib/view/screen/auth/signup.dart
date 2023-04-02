@@ -3,6 +3,7 @@ import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/view/widget/auth/textsignup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../core/functions/alertexitapp.dart';
 import '../../../core/functions/validinput.dart';
 import '../../widget/auth/custombuttonauth.dart';
 import '../../widget/auth/customtextformauth.dart';
@@ -28,7 +29,7 @@ class SignUp extends StatelessWidget {
         ),
       ),
       body: GetBuilder<SignUpControllerImp>(
-        builder: (controller) => Container(
+        builder: (controller) => WillPopScope(onWillPop: alertExitApp, child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 15),
           child: Form(
             key: controller.formstate,
@@ -113,7 +114,7 @@ class SignUp extends StatelessWidget {
               ],
             ),
           ),
-        ),
+        )),
       ),
     );
   }

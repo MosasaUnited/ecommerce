@@ -21,6 +21,10 @@ class MyTranslation extends Translations{
         '15': 'أعد إدخال كلمة السر الخاصة بك',
         '16': 'انت على بعد خطوة واحدة لنجاح التسجيل',
         '17': 'تم التسحيل بنجاح',
+        '18': 'تنبيه',
+        '19': ' هل تريد الخروج من التطبيق ؟',
+        '20': 'بالتأكيد',
+        '21': 'إلغاء',
       },
       'en' : {
         '1' : 'Choose Language',
@@ -40,6 +44,10 @@ class MyTranslation extends Translations{
         '15': 'Re-Enter Your Password',
         '16': 'ٍSuccess SignUp',
         '17': 'You Are Have Been Registered',
+        '18': 'Alert',
+        '19': 'Do You Want to Exit from the App ?',
+        '20': 'Confirm',
+        '21': 'Cancel',
       },
 
   };
