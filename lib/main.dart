@@ -28,11 +28,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       locale: controller.language,
       theme: controller.appTheme,
-      home:
-       const Language(),
       initialBinding: MyBinding(),
       // const Language(),
-      routes: routes,
+      // routes: routes,
+      getPages: routes,
     );
   }
 }
