@@ -7,12 +7,11 @@ import '../core/services/services.dart';
 
 abstract class OnBoardingController extends GetxController {
   next();
-  onPageChanged(int index);
 
+  onPageChanged(int index);
 }
 
 class OnBoardingControllerImp extends OnBoardingController {
-
   late PageController pageController;
 
   int currentPage = 0;
@@ -23,24 +22,22 @@ class OnBoardingControllerImp extends OnBoardingController {
   next() {
     currentPage++;
 
-    if(currentPage > onBoardingList.length -1){
+    if (currentPage > onBoardingList.length - 1) {
       myServices.sharedPreferences.setString("onboarding", "1");
       Get.offAllNamed(AppRoute.login);
-    }else{
+    } else {
       pageController.animateToPage(
         currentPage,
         duration: const Duration(milliseconds: 900),
         curve: Curves.easeInOut,
       );
     }
-
   }
-
 
   @override
   onPageChanged(int index) {
-   currentPage = index;
-   update();
+    currentPage = index;
+    update();
   }
 
   @override
@@ -48,5 +45,4 @@ class OnBoardingControllerImp extends OnBoardingController {
     pageController = PageController();
     super.onInit();
   }
-  
 }

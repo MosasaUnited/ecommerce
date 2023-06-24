@@ -6,17 +6,15 @@ import 'package:get/get_navigation/get_navigation.dart';
 
 import '../constant/routes.dart';
 
-class MyMiddleWare extends GetMiddleware{
+class MyMiddleWare extends GetMiddleware {
   @override
-
   int? get priority => 1;
 
   MyServices myServices = Get.find();
 
   @override
-
-  RouteSettings? redirect(String? route){
-    if(myServices.sharedPreferences.getString("onboarding") == "1"){
+  RouteSettings? redirect(String? route) {
+    if (myServices.sharedPreferences.getString("onboarding") == "1") {
       return const RouteSettings(name: AppRoute.login);
     }
   }
