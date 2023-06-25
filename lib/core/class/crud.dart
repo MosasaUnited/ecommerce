@@ -1,3 +1,6 @@
+// CRUD = Creat , Read , Update , Delete
+// this 1st step to connect project to your backend
+
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
