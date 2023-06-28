@@ -3,7 +3,7 @@ import 'package:ecommerce/core/localization/translation.dart';
 import 'package:ecommerce/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-dart';
+
 import 'core/localization/changelocal.dart';
 import 'routes.dart';
 

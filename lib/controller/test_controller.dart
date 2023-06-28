@@ -14,6 +14,7 @@ class TestController extends GetxController {
     statusRequest = StatusRequest.loading;
 
     var response = await testData.getData();
+    print('===================== Controller $response ');
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       data.addAll(response['data']);
