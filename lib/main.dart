@@ -1,9 +1,9 @@
+import 'package:ecommerce/bindings/initialbinding.dart';
 import 'package:ecommerce/core/localization/translation.dart';
 import 'package:ecommerce/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'binding.dart';
+dart';
 import 'core/localization/changelocal.dart';
 import 'routes.dart';
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       locale: controller.language,
       theme: controller.appTheme,
-      initialBinding: MyBinding(),
+      initialBinding: InitialBindings(),
       // const Language(),
       // routes: routes,
       getPages: routes,
