@@ -1,4 +1,5 @@
 import 'package:ecommerce/controller/test_controller.dart';
+import 'package:ecommerce/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +14,7 @@ class TestView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Test'),
+        backgroundColor: AppColor.primaryColor,
       ),
       body: GetBuilder<TestController>(builder: (controller) {
         return HandlingDataView(

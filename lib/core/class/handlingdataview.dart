@@ -1,35 +1,38 @@
 import 'package:ecommerce/core/class/statusrequest.dart';
+import 'package:ecommerce/core/constant/image_asset.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class HandlingDataView extends StatelessWidget {
   final StatusRequest statusRequest;
   final Widget widget;
+
   const HandlingDataView(
       {super.key, required this.statusRequest, required this.widget});
 
   @override
   Widget build(BuildContext context) {
     return statusRequest == StatusRequest.loading
-        ? const Center(child: Text('Loading', style: TextStyle(fontSize: 30)))
+        ? Center(
+            heightFactor: 250,
+            widthFactor: 250,
+            child: Lottie.asset(AppImageAsset.loading),
+          )
         : statusRequest == StatusRequest.offlineFailure
-            ? const Center(
-                child: Text(
-                'Offline Failure',
-                style: TextStyle(fontSize: 30),
-              ))
+            ? Center(
+                heightFactor: 250,
+                widthFactor: 250,
+                child: Lottie.asset(AppImageAsset.offline))
             : statusRequest == StatusRequest.serverFailure
-                ? const Center(
-                    child: Text(
-                    'Server Failure',
-                    style: TextStyle(fontSize: 30),
-                  ))
+                ? Center(
+                    heightFactor: 250,
+                    widthFactor: 250,
+                    child: Lottie.asset(AppImageAsset.serverError))
                 : statusRequest == StatusRequest.failure
-                    ? const Center(
-                        child: Text(
-                          'No Data',
-                          style: TextStyle(fontSize: 30),
-                        ),
-                      )
+                    ? Center(
+                        heightFactor: 250,
+                        widthFactor: 250,
+                        child: Lottie.asset(AppImageAsset.noData))
                     : widget;
   }
 }

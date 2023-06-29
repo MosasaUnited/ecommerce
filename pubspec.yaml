@@ -39,6 +39,7 @@ dependencies:
   # Animate
   show_up_animation: ^2.0.0
   auto_animated: ^3.0.1
+  lottie: ^2.4.0
   # Google Map
   flutter_polyline_points: ^1.0.0
   google_maps_flutter: ^2.1.5
@@ -103,11 +104,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/undraw_empty_cart_co35.png
-    - assets/images/undraw_Gone_shopping_re_2lau.png
-    - assets/images/undraw_online_groceries_a02y.png
-    - assets/images/undraw_shopping_app_flsj.png
-    - assets/images/E-Commerce-Logo-Design-PNG.png
+    - assets/images/
+    - assets/lottie/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
