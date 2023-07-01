@@ -3,4 +3,8 @@ class AppLink {
       "https://mostafa1ecommerce.000webhostapp.com/e-commerce";
 
   static const String test = "$server/test.php";
+
+  // -------------------------------- Auth --------------------------------
+
+  static const String signUp = "$server/auth/signup.php";
 }
