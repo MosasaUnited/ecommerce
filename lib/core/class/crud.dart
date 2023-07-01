@@ -24,7 +24,7 @@ class Crud {
         return const Left(StatusRequest.offlineFailure);
       }
     } catch (_) {
-      return const Left(StatusRequest.serverFailure);
+      return const Left(StatusRequest.serverException);
     }
   }
 }
