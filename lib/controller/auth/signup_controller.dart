@@ -1,31 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+
 import '../../core/constant/routes.dart';
 
-abstract class SignUpController extends GetxController{
-
-  GlobalKey<FormState> formstate = GlobalKey<FormState>();
-
+abstract class SignUpController extends GetxController {
   signUp();
   goToSignIn();
 }
+
 class SignUpControllerImp extends SignUpController {
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
 
   late TextEditingController email;
   late TextEditingController password;
   late TextEditingController username;
   late TextEditingController phone;
 
-
   @override
-  signUp()
-  {
-    var formdata = formstate.currentState;
-    if(formdata!.validate()){
-      print('Valid');
+  signUp() {
+    if (formstate.currentState!.validate()) {
       Get.offNamed(AppRoute.verifyCodeSignUp);
-    }else{
-      print('Not Valid');}
+    } else {}
   }
 
   @override
@@ -41,6 +36,7 @@ class SignUpControllerImp extends SignUpController {
     phone = TextEditingController();
     super.onInit();
   }
+
   @override
   void dispose() {
     email.dispose();
@@ -49,5 +45,4 @@ class SignUpControllerImp extends SignUpController {
     phone.dispose();
     super.dispose();
   }
-
 }

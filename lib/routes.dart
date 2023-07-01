@@ -1,4 +1,3 @@
-import 'package:ecommerce/test_view.dart';
 import 'package:ecommerce/view/screen/auth/forgetpassword/forgetpassword.dart';
 import 'package:ecommerce/view/screen/auth/forgetpassword/resetpassword.dart';
 import 'package:ecommerce/view/screen/auth/forgetpassword/success_resetpassword.dart';
@@ -15,11 +14,10 @@ import 'core/middleware/my_middleware.dart';
 import 'view/screen/auth/login.dart';
 
 List<GetPage<dynamic>>? routes = [
-  GetPage(name: '/', page: () => const TestView()),
   GetPage(
       name: "/", page: () => const Language(), middlewares: [MyMiddleWare()]),
 
-  // GetPage(name: '/', page: () => Test()), //This Line to test check Internet Connection
+  //GetPage(name: '/', page: () => const TestView()),
   GetPage(name: AppRoute.login, page: () => const Login()),
   GetPage(name: AppRoute.signUp, page: () => const SignUp()),
   GetPage(name: AppRoute.forgetPassword, page: () => const ForgetPassword()),

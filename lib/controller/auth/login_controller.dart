@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 
 import '../../core/constant/routes.dart';
 
-abstract class LoginController extends GetxController{
+abstract class LoginController extends GetxController {
   login();
   goToSignUp();
   goToForgetPassword();
 }
-class LoginControllerImp extends LoginController {
 
+class LoginControllerImp extends LoginController {
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
 
   late TextEditingController email;
@@ -17,23 +17,20 @@ class LoginControllerImp extends LoginController {
 
   bool isShowPassWord = true;
 
-  showPassWord(){
+  showPassWord() {
     isShowPassWord = isShowPassWord == true ? false : true;
     update();
   }
 
-
-
   @override
   login() {
     var formdata = formstate.currentState;
-    if(formdata!.validate()){
+    if (formdata!.validate()) {
       print('Valid');
-    }else{
+    } else {
       print('Not Valid');
     }
   }
-
 
   @override
   goToSignUp() {
@@ -46,6 +43,7 @@ class LoginControllerImp extends LoginController {
     password = TextEditingController();
     super.onInit();
   }
+
   @override
   void dispose() {
     email.dispose();
@@ -57,5 +55,4 @@ class LoginControllerImp extends LoginController {
   goToForgetPassword() {
     Get.toNamed(AppRoute.forgetPassword);
   }
-  
 }
