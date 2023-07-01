@@ -16,4 +16,5 @@ class AppImageAsset {
   static const String noData = '$rootLottie/no-data-found.json';
   static const String offline = '$rootLottie/offline.json';
   static const String serverError = '$rootLottie/server-error.json';
+  static const String loginLogo = '$rootLottie/ecommercelogin.json';
 }
