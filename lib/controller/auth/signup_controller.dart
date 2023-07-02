@@ -14,7 +14,7 @@ abstract class SignUpController extends GetxController {
 class SignUpControllerImp extends SignUpController {
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
 
-  late StatusRequest statusRequest;
+  StatusRequest? statusRequest;
 
   late TextEditingController email;
   late TextEditingController password;
@@ -29,6 +29,7 @@ class SignUpControllerImp extends SignUpController {
   signUp() async {
     if (formstate.currentState!.validate()) {
       statusRequest = StatusRequest.loading;
+      update();
 
       var response = await signUpData.postdata(
           username.text, password.text, email.text, phone.text);
@@ -37,7 +38,9 @@ class SignUpControllerImp extends SignUpController {
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == 'success') {
           //data.addAll(response['data']);
-          Get.offNamed(AppRoute.verifyCodeSignUp);
+          Get.offNamed(AppRoute.verifyCodeSignUp, arguments: {
+            'email': email.text,
+          });
         } else {
           Get.defaultDialog(
               title: 'Warning',
