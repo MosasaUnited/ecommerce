@@ -8,14 +8,16 @@ import '../../data/datasource/remote/auth/login.dart';
 
 abstract class LoginController extends GetxController {
   login();
+
   goToSignUp();
+
   goToForgetPassword();
 }
 
 class LoginControllerImp extends LoginController {
-  GlobalKey<FormState> formstate = GlobalKey<FormState>();
-
   LoginData loginData = LoginData(Get.find());
+
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
 
   StatusRequest? statusRequest;
 
@@ -34,7 +36,6 @@ class LoginControllerImp extends LoginController {
     if (formstate.currentState!.validate()) {
       statusRequest = StatusRequest.loading;
       update();
-
       var response = await loginData.postdata(email.text, password.text);
       print('===================== Controller $response ');
       statusRequest = handlingData(response);

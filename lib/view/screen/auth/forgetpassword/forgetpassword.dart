@@ -1,6 +1,7 @@
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../../controller/auth/forgetpassword_controller.dart';
 import '../../../../core/functions/validinput.dart';
 import '../../../widget/auth/custombuttonauth.dart';
@@ -11,7 +12,8 @@ class ForgetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ForgetPasswordControllerImp controller = Get.put(ForgetPasswordControllerImp());
+    ForgetPasswordControllerImp controller =
+        Get.put(ForgetPasswordControllerImp());
 
     return Scaffold(
       appBar: AppBar(
@@ -36,14 +38,13 @@ class ForgetPassword extends StatelessWidget {
                 height: 50,
               ),
               CustomTextFormAuth(
-                valid: (val){
-                  return validInput(val!, 5, 15, 'phone');
+                valid: (val) {
+                  return validInput(val!, 5, 15, 'email');
                 },
-                myController: controller.phone,
-                hintText: '11'.tr,
-                labelText: 'Phone',
-                iconData: Icons.phone_android_outlined,
-                isNumber: true,
+                myController: controller.email,
+                hintText: '5'.tr,
+                labelText: 'Email',
+                iconData: Icons.email_outlined, isNumber: false,
                 //myController: null,
               ),
               const SizedBox(
@@ -51,15 +52,13 @@ class ForgetPassword extends StatelessWidget {
               ),
               CustomButtonAuth(
                 text: 'Check',
-                onPressed: ()
-                {
+                onPressed: () {
                   controller.goToVerifyCode();
                 },
               ),
               const SizedBox(
                 height: 20,
               ),
-
             ],
           ),
         ),
