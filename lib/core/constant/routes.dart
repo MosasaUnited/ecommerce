@@ -1,4 +1,4 @@
-class AppRoute{
+class AppRoute {
   static const String login = '/login';
   static const String onBoarding = '/onboarding';
   static const String signUp = '/signup';
@@ -9,5 +9,6 @@ class AppRoute{
   static const String successResetPassword = '/successresetpassword';
   static const String checkPhone = '/checkphone';
   static const String verifyCodeSignUp = '/verifycodesignup';
-
+  //Home Page
+  static const String homepage = '/homepage';
 }

@@ -35,7 +35,7 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
       } else {
         Get.defaultDialog(
           title: 'Warning',
-          middleText: 'Phone Number or Email Already Exists',
+          middleText: 'Verify Code is not Correct',
         );
         statusRequest = StatusRequest.failure;
       }
