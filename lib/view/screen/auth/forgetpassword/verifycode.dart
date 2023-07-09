@@ -1,13 +1,10 @@
-import 'package:ecommerce/controller/auth/signup_controller.dart';
 import 'package:ecommerce/core/constant/color.dart';
-import 'package:ecommerce/view/widget/auth/textsignup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
-import '../../../../controller/auth/forgetpassword_controller.dart';
-import '../../../../controller/auth/verifycode_controller.dart';
+
+import '../../../../controller/forgetpassword/verifycode_controller.dart';
 import '../../../widget/auth/custombuttonauth.dart';
-import '../../../widget/auth/customtextformauth.dart';
 import '../../../widget/auth/customtitleauth.dart';
 
 class VerifyCode extends StatelessWidget {
@@ -37,7 +34,9 @@ class VerifyCode extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const CustomTitleAuth(text: 'Check Code',),
+            const CustomTitleAuth(
+              text: 'Check Code',
+            ),
             const SizedBox(
               height: 10,
             ),
@@ -53,8 +52,8 @@ class VerifyCode extends StatelessWidget {
                 //handle validation or checks here
               },
               //runs when every text-field is filled
-              onSubmit: (String verificationCode){
-                controller.goToResetPassword();
+              onSubmit: (String verificationCode) {
+                controller.goToResetPassword(verificationCode);
               }, // end onSubmit
             ),
             const SizedBox(
@@ -67,7 +66,6 @@ class VerifyCode extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-
           ],
         ),
       ),

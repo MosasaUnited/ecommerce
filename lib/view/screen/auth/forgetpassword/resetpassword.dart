@@ -1,7 +1,8 @@
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../controller/auth/resetpasswoed_controller.dart';
+
+import '../../../../controller/forgetpassword/resetpasswoed_controller.dart';
 import '../../../../core/functions/validinput.dart';
 import '../../../widget/auth/custombuttonauth.dart';
 import '../../../widget/auth/customtextbodyauth.dart';
@@ -13,7 +14,8 @@ class ResetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ResetPasswordControllerImp controller = Get.put(ResetPasswordControllerImp());
+    ResetPasswordControllerImp controller =
+        Get.put(ResetPasswordControllerImp());
 
     return Scaffold(
       appBar: AppBar(
@@ -37,13 +39,17 @@ class ResetPassword extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              const CustomTitleAuth(text: 'New Password',),
+              const CustomTitleAuth(
+                text: 'New Password',
+              ),
               const SizedBox(
                 height: 20,
               ),
-              const CustomTextBodyAuth(text: 'Please Enter new Password',),
+              const CustomTextBodyAuth(
+                text: 'Please Enter new Password',
+              ),
               CustomTextFormAuth(
-                valid: (val){
+                valid: (val) {
                   return validInput(val!, 5, 30, 'password');
                 },
                 myController: controller.password,
@@ -54,7 +60,7 @@ class ResetPassword extends StatelessWidget {
                 //myController: null,
               ),
               CustomTextFormAuth(
-                valid: (val){
+                valid: (val) {
                   return validInput(val!, 5, 15, 'password');
                 },
                 myController: controller.repassword,
@@ -66,15 +72,13 @@ class ResetPassword extends StatelessWidget {
               ),
               CustomButtonAuth(
                 text: 'Save',
-                onPressed: ()
-                {
+                onPressed: () {
                   controller.goToSuccessResetPassword();
                 },
               ),
               const SizedBox(
                 height: 20,
               ),
-
             ],
           ),
         ),

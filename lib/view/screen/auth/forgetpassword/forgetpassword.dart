@@ -2,7 +2,7 @@ import 'package:ecommerce/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../controller/auth/forgetpassword_controller.dart';
+import '../../../../controller/forgetpassword/forgetpassword_controller.dart';
 import '../../../../core/functions/validinput.dart';
 import '../../../widget/auth/custombuttonauth.dart';
 import '../../../widget/auth/customtextformauth.dart';
@@ -53,7 +53,7 @@ class ForgetPassword extends StatelessWidget {
               CustomButtonAuth(
                 text: 'Check',
                 onPressed: () {
-                  controller.goToVerifyCode();
+                  controller.checkEmail();
                 },
               ),
               const SizedBox(
