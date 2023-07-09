@@ -1,8 +1,11 @@
+import 'package:ecommerce/core/class/statusrequest.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../../controller/forgetpassword/resetpasswoed_controller.dart';
+import '../../../../core/constant/image_asset.dart';
 import '../../../../core/functions/validinput.dart';
 import '../../../widget/auth/custombuttonauth.dart';
 import '../../../widget/auth/customtextbodyauth.dart';
@@ -14,75 +17,88 @@ class ResetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ResetPasswordControllerImp controller =
-        Get.put(ResetPasswordControllerImp());
+    Get.put(ResetPasswordControllerImp());
 
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: AppColor.backgroundColor,
-        elevation: 0.0,
-        title: Text(
-          '14'.tr,
-          style: Theme.of(context)
-              .textTheme
-              .headlineLarge!
-              .copyWith(color: AppColor.grey),
-        ),
-      ),
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 15),
-        child: Form(
-          key: controller.formstate,
-          child: ListView(
-            children: [
-              const SizedBox(
-                height: 50,
-              ),
-              const CustomTitleAuth(
-                text: 'New Password',
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const CustomTextBodyAuth(
-                text: 'Please Enter new Password',
-              ),
-              CustomTextFormAuth(
-                valid: (val) {
-                  return validInput(val!, 5, 30, 'password');
-                },
-                myController: controller.password,
-                hintText: '6'.tr,
-                labelText: 'Password',
-                iconData: Icons.phone_android_outlined,
-                isNumber: false,
-                //myController: null,
-              ),
-              CustomTextFormAuth(
-                valid: (val) {
-                  return validInput(val!, 5, 15, 'password');
-                },
-                myController: controller.repassword,
-                hintText: '15'.tr,
-                labelText: 'Re-Enter Password',
-                iconData: Icons.lock_outline,
-                isNumber: false,
-                //myController: null,
-              ),
-              CustomButtonAuth(
-                text: 'Save',
-                onPressed: () {
-                  controller.goToSuccessResetPassword();
-                },
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-            ],
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: AppColor.backgroundColor,
+          elevation: 0.0,
+          title: Text(
+            '14'.tr,
+            style: Theme.of(context)
+                .textTheme
+                .headlineLarge!
+                .copyWith(color: AppColor.grey),
           ),
         ),
-      ),
-    );
+        body: GetBuilder<ResetPasswordControllerImp>(
+          builder: (controller) => controller.statusRequest ==
+                  StatusRequest.loading
+              ? Center(
+                  child: Lottie.asset(
+                    AppImageAsset.dotsLoading,
+                    height: 150,
+                    repeat: true,
+                  ),
+                )
+              : Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 35, vertical: 15),
+                  child: Form(
+                    key: controller.formstate,
+                    child: ListView(
+                      children: [
+                        const SizedBox(
+                          height: 50,
+                        ),
+                        const CustomTitleAuth(
+                          text: 'New Password',
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const CustomTextBodyAuth(
+                          text: 'Please Enter new Password',
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        CustomTextFormAuth(
+                          valid: (val) {
+                            return validInput(val!, 4, 30, 'password');
+                          },
+                          myController: controller.password,
+                          hintText: '6'.tr,
+                          labelText: 'Password',
+                          iconData: Icons.lock,
+                          isNumber: false,
+                          //myController: null,
+                        ),
+                        CustomTextFormAuth(
+                          valid: (val) {
+                            return validInput(val!, 4, 30, 'password');
+                          },
+                          myController: controller.repassword,
+                          hintText: '15'.tr,
+                          labelText: 'Re-Enter Password',
+                          iconData: Icons.lock_outline,
+                          isNumber: false,
+                          //myController: null,
+                        ),
+                        CustomButtonAuth(
+                          text: 'Save',
+                          onPressed: () {
+                            controller.goToSuccessResetPassword();
+                          },
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+        ));
   }
 }
