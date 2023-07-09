@@ -62,7 +62,7 @@ class ResetPassword extends StatelessWidget {
                           text: 'Please Enter new Password',
                         ),
                         const SizedBox(
-                          height: 5,
+                          height: 20,
                         ),
                         CustomTextFormAuth(
                           valid: (val) {

@@ -18,4 +18,5 @@ class AppImageAsset {
   static const String serverError = '$rootLottie/server-error.json';
   static const String loginLogo = '$rootLottie/ecommercelogin.json';
   static const String dotsLoading = '$rootLottie/dots-loading.json';
+  static const String resetPassword = '$rootLottie/reset-password.json';
 }
