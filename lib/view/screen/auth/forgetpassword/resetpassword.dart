@@ -1,11 +1,10 @@
 import 'package:ecommerce/core/class/statusrequest.dart';
 import 'package:ecommerce/core/constant/color.dart';
+import 'package:ecommerce/core/constant/lottie_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
 import '../../../../controller/forgetpassword/resetpasswoed_controller.dart';
-import '../../../../core/constant/image_asset.dart';
 import '../../../../core/functions/validinput.dart';
 import '../../../widget/auth/custombuttonauth.dart';
 import '../../../widget/auth/customtextbodyauth.dart';
@@ -35,13 +34,7 @@ class ResetPassword extends StatelessWidget {
         body: GetBuilder<ResetPasswordControllerImp>(
           builder: (controller) => controller.statusRequest ==
                   StatusRequest.loading
-              ? Center(
-                  child: Lottie.asset(
-                    AppImageAsset.dotsLoading,
-                    height: 150,
-                    repeat: true,
-                  ),
-                )
+              ? const DotsLoading()
               : Container(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 35, vertical: 15),

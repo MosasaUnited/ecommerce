@@ -1,16 +1,14 @@
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
 import '../../../controller/auth/login_controller.dart';
 import '../../../core/class/statusrequest.dart';
-import '../../../core/constant/image_asset.dart';
+import '../../../core/constant/lottie_widgets.dart';
 import '../../../core/functions/alertexitapp.dart';
 import '../../../core/functions/validinput.dart';
 import '../../widget/auth/custombuttonauth.dart';
 import '../../widget/auth/customtextformauth.dart';
-import '../../widget/auth/logoauth.dart';
 import '../../widget/auth/textsignup.dart';
 
 class Login extends StatelessWidget {
@@ -37,13 +35,7 @@ class Login extends StatelessWidget {
             child: GetBuilder<LoginControllerImp>(
                 builder: (controller) => controller.statusRequest ==
                         StatusRequest.loading
-                    ? Center(
-                        child: Lottie.asset(
-                          AppImageAsset.dotsLoading,
-                          height: 150,
-                          repeat: true,
-                        ),
-                      )
+                    ? const DotsLoading()
                     : Container(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 35, vertical: 15),

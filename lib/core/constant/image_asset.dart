@@ -12,7 +12,6 @@ class AppImageAsset {
   static const String onBoardingImageFour =
       '$rootImages/undraw_shopping_app_flsj.png';
 
-  static const String loading = '$rootLottie/loading.json';
   static const String noData = '$rootLottie/no-data-found.json';
   static const String offline = '$rootLottie/offline.json';
   static const String serverError = '$rootLottie/server-error.json';

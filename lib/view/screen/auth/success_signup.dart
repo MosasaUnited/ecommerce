@@ -43,7 +43,7 @@ class SuccessSignUp extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            Container(
+            SizedBox(
               width: double.infinity,
               child: CustomButtonAuth(
                 text: 'Back To Login Screen',

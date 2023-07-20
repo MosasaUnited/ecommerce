@@ -1,10 +1,9 @@
 import 'package:ecommerce/controller/auth/success_resetpassword_controller.dart';
+import 'package:ecommerce/view/screen/auth/forgetpassword/resetpassword.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
 import '../../../../core/constant/color.dart';
-import '../../../../core/constant/image_asset.dart';
 import '../../../widget/auth/custombuttonauth.dart';
 
 class SuccessResetPassword extends StatelessWidget {
@@ -31,13 +30,7 @@ class SuccessResetPassword extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: Column(
           children: [
-            Center(
-              child: Lottie.asset(
-                AppImageAsset.resetPassword,
-                height: 300,
-                repeat: false,
-              ),
-            ),
+            const ResetPassword(),
             Text(
               '17'.tr,
               style: const TextStyle(
