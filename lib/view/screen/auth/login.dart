@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../controller/auth/login_controller.dart';
-import '../../../core/class/statusrequest.dart';
+import '../../../core/class/handlingdataview.dart';
 import '../../../core/constant/lottie_widgets.dart';
 import '../../../core/functions/alertexitapp.dart';
 import '../../../core/functions/validinput.dart';
@@ -33,10 +33,9 @@ class Login extends StatelessWidget {
         body: WillPopScope(
             onWillPop: alertExitApp,
             child: GetBuilder<LoginControllerImp>(
-                builder: (controller) => controller.statusRequest ==
-                        StatusRequest.loading
-                    ? const DotsLoading()
-                    : Container(
+                builder: (controller) => HandlingDataRequest(
+                      statusRequest: controller.statusRequest,
+                      widget: Container(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 35, vertical: 15),
                         child: Form(
@@ -121,6 +120,7 @@ class Login extends StatelessWidget {
                             ],
                           ),
                         ),
-                      ))));
+                      ),
+                    ))));
   }
 }

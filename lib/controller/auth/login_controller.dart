@@ -8,9 +8,7 @@ import '../../data/datasource/remote/auth/login.dart';
 
 abstract class LoginController extends GetxController {
   login();
-
   goToSignUp();
-
   goToForgetPassword();
 }
 
@@ -19,7 +17,7 @@ class LoginControllerImp extends LoginController {
 
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
 
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
 
   late TextEditingController email;
   late TextEditingController password;

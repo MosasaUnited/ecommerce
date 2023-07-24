@@ -78,7 +78,8 @@ class ResetPassword extends StatelessWidget {
       child: Lottie.asset(
         AppImageAsset.resetPassword,
         height: 300,
-        repeat: false,
+        width: 300,
+        repeat: true,
       ),
     );
   }

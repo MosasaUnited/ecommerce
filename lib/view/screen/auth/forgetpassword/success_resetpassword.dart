@@ -1,9 +1,9 @@
 import 'package:ecommerce/controller/auth/success_resetpassword_controller.dart';
-import 'package:ecommerce/view/screen/auth/forgetpassword/resetpassword.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/constant/color.dart';
+import '../../../../core/constant/lottie_widgets.dart';
 import '../../../widget/auth/custombuttonauth.dart';
 
 class SuccessResetPassword extends StatelessWidget {

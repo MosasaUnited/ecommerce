@@ -13,7 +13,7 @@ abstract class VerifyCodeController extends GetxController {
 class VerifyCodeControllerImp extends VerifyCodeController {
   String? email;
 
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
 
   VerifyCodeForgetPasswordData verifyCodeForgetPasswordData =
       VerifyCodeForgetPasswordData(Get.find());

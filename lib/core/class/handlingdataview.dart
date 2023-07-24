@@ -23,3 +23,22 @@ class HandlingDataView extends StatelessWidget {
                     : widget;
   }
 }
+
+class HandlingDataRequest extends StatelessWidget {
+  final StatusRequest statusRequest;
+  final Widget widget;
+
+  const HandlingDataRequest(
+      {super.key, required this.statusRequest, required this.widget});
+
+  @override
+  Widget build(BuildContext context) {
+    return statusRequest == StatusRequest.loading
+        ? const DotsLoading()
+        : statusRequest == StatusRequest.offlineFailure
+            ? const Offline()
+            : statusRequest == StatusRequest.serverFailure
+                ? const ServerError()
+                : widget;
+  }
+}

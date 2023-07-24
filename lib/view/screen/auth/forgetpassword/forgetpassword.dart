@@ -1,10 +1,9 @@
 import 'package:ecommerce/core/constant/color.dart';
-import 'package:ecommerce/core/constant/lottie_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../controller/forgetpassword/forgetpassword_controller.dart';
-import '../../../../core/class/statusrequest.dart';
+import '../../../../core/class/handlingdataview.dart';
 import '../../../../core/functions/validinput.dart';
 import '../../../widget/auth/custombuttonauth.dart';
 import '../../../widget/auth/customtextformauth.dart';
@@ -30,46 +29,45 @@ class ForgetPassword extends StatelessWidget {
         ),
       ),
       body: GetBuilder<ForgetPasswordControllerImp>(
-        builder: (controller) => controller.statusRequest ==
-                StatusRequest.loading
-            ? const DotsLoading()
-            : Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 35, vertical: 15),
-                child: Form(
-                  key: controller.formstate,
-                  child: ListView(
-                    children: [
-                      const SizedBox(
-                        height: 50,
-                      ),
-                      CustomTextFormAuth(
-                        valid: (val) {
-                          return validInput(val!, 5, 55, 'email');
-                        },
-                        myController: controller.email,
-                        hintText: '5'.tr,
-                        labelText: 'Email',
-                        iconData: Icons.email_outlined,
-                        isNumber: false,
-                        //myController: null,
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      CustomButtonAuth(
-                        text: 'Check',
-                        onPressed: () {
-                          controller.checkEmail();
-                        },
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                    ],
+        builder: (controller) => HandlingDataRequest(
+          statusRequest: controller.statusRequest,
+          widget: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 15),
+            child: Form(
+              key: controller.formstate,
+              child: ListView(
+                children: [
+                  const SizedBox(
+                    height: 50,
                   ),
-                ),
+                  CustomTextFormAuth(
+                    valid: (val) {
+                      return validInput(val!, 5, 55, 'email');
+                    },
+                    myController: controller.email,
+                    hintText: '5'.tr,
+                    labelText: 'Email',
+                    iconData: Icons.email_outlined,
+                    isNumber: false,
+                    //myController: null,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CustomButtonAuth(
+                    text: 'Check',
+                    onPressed: () {
+                      controller.checkEmail();
+                    },
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                ],
               ),
+            ),
+          ),
+        ),
       ),
     );
   }

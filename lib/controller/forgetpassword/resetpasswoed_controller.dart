@@ -21,7 +21,7 @@ class ResetPasswordControllerImp extends ResetPasswordController {
 
   String? email;
 
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
 
   @override
   resetPassword() {}
