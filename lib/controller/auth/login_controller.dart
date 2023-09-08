@@ -1,4 +1,5 @@
 import 'package:ecommerce/core/class/statusrequest.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -58,6 +59,10 @@ class LoginControllerImp extends LoginController {
 
   @override
   void onInit() {
+    FirebaseMessaging.instance.getToken().then((value) {
+      print(value);
+      String? token = value;
+    });
     email = TextEditingController();
     password = TextEditingController();
     super.onInit();

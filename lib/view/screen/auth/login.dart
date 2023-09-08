@@ -1,7 +1,6 @@
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../controller/auth/login_controller.dart';
 import '../../../core/class/handlingdataview.dart';
 import '../../../core/constant/lottie_widgets.dart';
