@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import '../../core/constant/routes.dart';
 import '../../core/functions/handlingdata.dart';
+import '../../core/services/services.dart';
 import '../../data/datasource/remote/auth/login.dart';
 
 abstract class LoginController extends GetxController {
@@ -25,6 +26,8 @@ class LoginControllerImp extends LoginController {
 
   bool isShowPassWord = true;
 
+  MyServices myServices = Get.find();
+
   showPassWord() {
     isShowPassWord = isShowPassWord == true ? false : true;
     update();
@@ -41,6 +44,16 @@ class LoginControllerImp extends LoginController {
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == 'success') {
           //data.addAll(response['data']);
+          myServices.sharedPreferences
+              .setString('id', response['data']['users_id']);
+          myServices.sharedPreferences
+              .setString('username', response['data']['users_name']);
+          myServices.sharedPreferences
+              .setString('email', response['data']['users_email']);
+          myServices.sharedPreferences
+              .setString('phone', response['data']['users_phone']);
+          myServices.sharedPreferences.setString('step', '2');
+
           Get.offNamed(AppRoute.homepage);
         } else {
           Get.defaultDialog(
