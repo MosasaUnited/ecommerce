@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
     HomeControllerImp controller = Get.put(HomeControllerImp());
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: ListView(
           children: [
             Container(
