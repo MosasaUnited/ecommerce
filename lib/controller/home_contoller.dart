@@ -31,6 +31,7 @@ class HomeControllerImp extends HomeController {
 
   @override
   void onInit() {
+    getData();
     initialData();
     super.onInit();
   }
@@ -49,7 +50,6 @@ class HomeControllerImp extends HomeController {
         statusRequest = StatusRequest.failure;
       }
     }
-
     update();
   }
 }
