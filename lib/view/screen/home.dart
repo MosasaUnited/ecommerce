@@ -15,36 +15,34 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(HomeControllerImp());
-    return Scaffold(
-      body: GetBuilder<HomeControllerImp>(
-          builder: (controller) => HandlingDataView(
-              statusRequest: controller.statusRequest,
-              widget: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: ListView(
-                  children: [
-                    CustomAppBar(
-                        titleappbar: 'Find Product',
-                        onPressedIcon: () {},
-                        onPressedSearch: () {}),
-                    const CustomCardHome(
-                      title: 'Summer Surprise',
-                      body: 'Cashback 20%',
-                    ),
-                    const ListCategoriesHome(),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const CustomTitleHome(
-                      title: 'Product for You',
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const ListItems(),
-                  ],
-                ),
-              ))),
-    );
+    return GetBuilder<HomeControllerImp>(
+        builder: (controller) => HandlingDataView(
+            statusRequest: controller.statusRequest,
+            widget: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: ListView(
+                children: [
+                  CustomAppBar(
+                      titleappbar: 'Find Product',
+                      onPressedIcon: () {},
+                      onPressedSearch: () {}),
+                  const CustomCardHome(
+                    title: 'Summer Surprise',
+                    body: 'Cashback 20%',
+                  ),
+                  const CustomTitleHome(
+                    title: 'Categories',
+                  ),
+                  const ListCategoriesHome(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const CustomTitleHome(
+                    title: 'Product for You',
+                  ),
+                  const ListItems(),
+                ],
+              ),
+            )));
   }
 }
