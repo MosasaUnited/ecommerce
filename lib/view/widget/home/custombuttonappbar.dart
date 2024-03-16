@@ -1,16 +1,17 @@
+import 'package:ecommerce/core/constant/color.dart';
 import 'package:flutter/material.dart';
 
 class CustomButtonAppBar extends StatelessWidget {
   final Function()? onPressed;
   final String textButton;
   final IconData iconData;
-  final Color colorItemSelected;
+  final bool active;
   const CustomButtonAppBar(
       {super.key,
       required this.textButton,
       required this.iconData,
       required this.onPressed,
-      required this.colorItemSelected});
+      required this.active});
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +22,12 @@ class CustomButtonAppBar extends StatelessWidget {
           children: [
             Icon(
               iconData,
-              color: colorItemSelected,
+              color: active == true ? AppColor.primaryColor : Colors.black,
             ),
             Text(
               textButton,
-              style: TextStyle(color: colorItemSelected),
+              style: TextStyle(
+                  color: active == true ? AppColor.primaryColor : Colors.black),
             )
           ],
         ));

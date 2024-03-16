@@ -1,4 +1,5 @@
 import 'package:ecommerce/controller/screencontroller.dart';
+import 'package:ecommerce/view/widget/home/custombuttonappbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,53 +24,39 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      MaterialButton(
-                        onPressed: () {
-                          controller.changePage(0);
-                        },
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [Icon(Icons.home), Text('Home')],
-                        ),
-                      ),
-                      MaterialButton(
-                        onPressed: () {
-                          controller.changePage(1);
-                        },
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [Icon(Icons.settings), Text('Settings')],
-                        ),
-                      ),
+                      CustomButtonAppBar(
+                          textButton: 'Home',
+                          iconData: Icons.home_outlined,
+                          onPressed: () {
+                            controller.changePage(0);
+                          },
+                          active: controller.currentPage == 0 ? true : false),
+                      CustomButtonAppBar(
+                          textButton: 'Settings',
+                          iconData: Icons.settings_outlined,
+                          onPressed: () {
+                            controller.changePage(1);
+                          },
+                          active: controller.currentPage == 1 ? true : false),
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Row(
                     children: [
-                      MaterialButton(
-                        onPressed: () {
-                          controller.changePage(2);
-                        },
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(Icons.star_border_outlined),
-                            Text('Favourite')
-                          ],
-                        ),
-                      ),
-                      MaterialButton(
-                        onPressed: () {
-                          controller.changePage(3);
-                        },
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(Icons.person_2_outlined),
-                            Text('Profile')
-                          ],
-                        ),
-                      ),
+                      CustomButtonAppBar(
+                          textButton: 'Favourite',
+                          iconData: Icons.favorite_outline_outlined,
+                          onPressed: () {
+                            controller.changePage(2);
+                          },
+                          active: controller.currentPage == 2 ? true : false),
+                      CustomButtonAppBar(
+                          textButton: 'Profile',
+                          iconData: Icons.person_outlined,
+                          onPressed: () {
+                            controller.changePage(3);
+                          },
+                          active: controller.currentPage == 3 ? true : false),
                     ],
                   ),
                 ],
